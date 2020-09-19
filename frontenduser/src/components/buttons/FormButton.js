@@ -2,18 +2,6 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
-export const FormButton = ({
-  disabled,
-  text,
-}) => {
-  const classes = useStyles();
-  return (
-    <Button type="submit" disabled={disabled} className={classes.button}>
-      {text}
-    </Button>
-  );
-};
-
 const useStyles = makeStyles(() =>
   createStyles({
     button: {
@@ -28,3 +16,17 @@ const useStyles = makeStyles(() =>
     },
   }),
 );
+
+export const FormButton = ({
+  disabled,
+  text,
+}) => {
+  const classes = useStyles();
+  return (
+    <Button type="submit" disabled={disabled} className={classes.button}>
+      {text}
+    </Button>
+  );
+};
+
+

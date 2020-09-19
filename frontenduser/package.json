@@ -10,6 +10,7 @@
     "react-scripts": "0.9.5",
     "react-vertical-timeline": "^0.2.0",
     "react-vertical-timeline-component": "^3.0.2",
+    "react-web-notifications": "^1.1.0",
     "yup": "^0.29.3"
   },
   "devDependencies": {

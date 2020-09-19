@@ -18,13 +18,33 @@ import { FormButton } from '../components/buttons/FormButton';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { StatusMessage } from '../components/status-messages/StatusMessage';
 
+const useStyles = makeStyles(() =>
+  createStyles({
+    container: {
+      paddingTop: 60,
+    },
+    signInText: {
+      fontSize: 25,
+    },
+    formContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    forgotLink: {
+      textDecoration: 'none',
+      color: '#6c74cc',
+    },
+    copyrightBox: {
+      marginTop: 35,
+    },
+  }),
+);
+
 export const LoginPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [shouldRedirect, setShouldRedirect] = useState(false);
-  //const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // console.log("should", shouldRedirect)
-  // console.log("lS", localStorage.getItem('helsenaToken'))
   const classes = useStyles();
 
   const formik = useFormik({
@@ -137,25 +157,4 @@ export const LoginPage = () => {
   );
 };
 
-const useStyles = makeStyles(() =>
-  createStyles({
-    container: {
-      paddingTop: 60,
-    },
-    signInText: {
-      fontSize: 25,
-    },
-    formContainer: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-    },
-    forgotLink: {
-      textDecoration: 'none',
-      color: '#6c74cc',
-    },
-    copyrightBox: {
-      marginTop: 35,
-    },
-  }),
-);
+

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import {
   Toolbar,
   List,
@@ -22,6 +22,42 @@ import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Typography } from '@material-ui/core';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
+
+const drawerWidth = 240;
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      display: 'flex',
+    },
+    appBar: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+    },
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+    },
+    panelheaderRight: {
+      marginRight: 0,
+      right: 0,
+    },
+    toolbar: {
+      justifyContent: 'space-between',
+    },
+    title: {
+      fontSize: 20,
+    },
+    link: {
+      textDecoration: 'none',
+      color: 'black',
+    },
+  }),
+);
+
 
 export const LeftDrawer = () => {
   let history = useHistory();
@@ -89,37 +125,3 @@ export const LeftDrawer = () => {
   );
 };
 
-const drawerWidth = 240;
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    root: {
-      display: 'flex',
-    },
-    appBar: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
-    drawer: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-    drawerPaper: {
-      width: drawerWidth,
-    },
-    panelheaderRight: {
-      marginRight: 0,
-      right: 0,
-    },
-    toolbar: {
-      justifyContent: 'space-between',
-    },
-    title: {
-      fontSize: 20,
-    },
-    link: {
-      textDecoration: 'none',
-      color: 'black',
-    },
-  }),
-);
