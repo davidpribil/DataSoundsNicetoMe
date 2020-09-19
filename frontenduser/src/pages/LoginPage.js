@@ -12,7 +12,6 @@ import {
   Container,
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import { loginSchema } from '../helpers/Validations';
 import { CopyrightDetails } from '../components/copyright/CopyrightDetails';
 import { FormButton } from '../components/buttons/FormButton';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
@@ -49,26 +48,26 @@ export const LoginPage = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: '',
+      userid: '',
       password: '',
     },
     onSubmit: (values, actions) => {
-      submitForm(values.email, values.password);
+      submitForm(values.userid, values.password);
       setTimeout(() => {
         actions.setSubmitting(false);
       }, 700);
     },
-    validationSchema: loginSchema,
   });
 
-  let submitForm = (email, password) => {
+  let submitForm = (userid, password) => {
     setIsSubmitted(true);
-    if(email === "data@data.com" && password === "test"){
+    if(password === "test"){
       setShouldRedirect(true);
       localStorage.setItem('helsenaToken', "passwordApproved");
+      localStorage.setItem('userid', userid);
     }
     else{
-      setErrorMessage("Email or Password is Incorrect")
+      setErrorMessage("Password is Incorrect")
     }
   };
 
@@ -92,13 +91,13 @@ export const LoginPage = () => {
           <TextField
             variant="outlined"
             margin="normal"
-            id="email"
+            id="userid"
             fullWidth
-            name="email"
-            helperText={formik.touched.email ? formik.errors.email : ''}
-            error={formik.touched.email && Boolean(formik.errors.email)}
-            label="Email"
-            value={formik.values.email}
+            name="userid"
+            helperText={formik.touched.userid ? formik.errors.userid : ''}
+            error={formik.touched.userid && Boolean(formik.errors.userid)}
+            label="User ID"
+            value={formik.values.userid}
             onChange={props => {
               formik.handleChange(props);
               formik.handleBlur(props);
@@ -134,7 +133,7 @@ export const LoginPage = () => {
           />
           <br />
           <FormButton
-            disabled={!formik.values.email || !formik.values.password}
+            disabled={false}
             text={'Submit'}
           />
           <br />

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {LoginPage} from './pages/LoginPage';
 import {PanelHomePage} from './pages/PanelHomePage';
-import {HistoryPage} from './pages/HistoryPage';
+import HistoryPage from './pages/HistoryPage';
 
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 
