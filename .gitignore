@@ -127,3 +127,22 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# dependencies
+/frontenduser/node_modules
+
+# Webpack autogen
+/frontenduser/static/frontenduser/main.js
+
+# testing
+/frontenduser/coverage
+
+# production
+/frontenduser/build
+
+# misc
+.DS_Store
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
