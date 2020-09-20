@@ -8,6 +8,7 @@ class ActivitySerializer(serializers.ModelSerializer):
     approved = serializers.SerializerMethodField('is_approved')
     category = serializers.SerializerMethodField('get_category')
     points = serializers.SerializerMethodField('get_points')
+    ActivityTime = serializers.DateTimeField(format="%d/%m/%Y %H:%M")
 
     def is_approved(self, activity):
         return not activity_fraudulent(activity.Id)
