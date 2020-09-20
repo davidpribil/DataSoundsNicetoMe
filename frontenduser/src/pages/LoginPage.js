@@ -62,9 +62,9 @@ export const LoginPage = () => {
   let submitForm = (userid, password) => {
     setIsSubmitted(true);
     if(password === "test"){
-      setShouldRedirect(true);
       localStorage.setItem('helsenaToken', "passwordApproved");
       localStorage.setItem('userid', userid);
+      setShouldRedirect(true);
     }
     else{
       setErrorMessage("Password is Incorrect")
