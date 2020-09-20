@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Activity
 from .csv_sources import activity_fraudulent, category
+import random
 
 class ActivitySerializer(serializers.ModelSerializer):
 
@@ -9,13 +10,20 @@ class ActivitySerializer(serializers.ModelSerializer):
     points = serializers.SerializerMethodField('get_points')
 
     def is_approved(self, activity):
-      return not activity_fraudulent(activity.Id)
+        return not activity_fraudulent(activity.Id)
     
     def get_category(self, activity):
-      return category(activity.BasicActivity)
+        return category(activity.BasicActivity)
 
     def get_points(self, activity):
-      return 30
+        cat = category(activity.BasicActivity)
+        if cat == 'Fitness':
+            return 20
+        elif cat == 'Loyalty':
+            return 30
+        elif cat == 'Nutrition':
+            return 50
+        return 10
 
     class Meta:
         model = Activity
