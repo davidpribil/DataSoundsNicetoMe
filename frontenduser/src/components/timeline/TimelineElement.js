@@ -56,7 +56,7 @@ export const TimelineElement = ({ date, activity, approved, points, category }) 
                 icon={<ErrorOutline />}
             >
                 <h3 className="vertical-timeline-element-title"> - 100 Points</h3>
-                <h4 className="vertical-timeline-element-subtitle">Lie Detected</h4>
+                <h4 className="vertical-timeline-element-subtitle">Questionable activity</h4>
                 <p>
                     Your activity was not approved. If you think there's a mistake, contact customer support.
                              </p>
