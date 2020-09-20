@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { LeftDrawer } from '../components/drawer/LeftDrawer';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { TimelineElement } from '../components/timeline/TimelineElement';
 import 'react-vertical-timeline-component/style.min.css';
@@ -16,10 +15,6 @@ class HistoryPage extends React.Component {
           loaded: false,
           placeholder: "Loading"
         };
-        this.styles = {
-            paddingLeft: 280,
-            paddingTop: 100,
-        }
       }
     
       componentDidMount() {
@@ -46,7 +41,7 @@ class HistoryPage extends React.Component {
         return (
             <div>
                 < LeftDrawer />
-                <div className={this.styles}>
+                <div style={{paddingLeft: 280, paddingTop: 100}}>
                     <VerticalTimeline>
                         {this.state.data.map((element) => {
                             return (

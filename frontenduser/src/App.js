@@ -2,7 +2,7 @@ import { render } from "react-dom";
 import React, { Component } from 'react';
 import './App.css';
 import {LoginPage} from './pages/LoginPage';
-import {PanelHomePage} from './pages/PanelHomePage';
+import PanelHomePage from './pages/PanelHomePage';
 import HistoryPage from './pages/HistoryPage';
 
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
@@ -18,7 +18,7 @@ export const  App = () =>  {
             <Redirect from="*" to="/404" />
             </Switch>
             </BrowserRouter>
-      // </div>
+      </div>
     );
 }
 
